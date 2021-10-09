@@ -1,50 +1,62 @@
 {
-  "name": "react-npm-starter-kit",
-  "description": "React npm starter kit provides the basic setup to continue on npm library building",
-  "version": "1.0.0",
-  "main": "dist/index.js",
-  "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "transpile": "babel src -d dist --copy-files",
-    "prePublishOnly": "npm run transpile",
-    "build": "webpack --mode production",
-    "deploy": "gh-pages -d examples/dist",
-    "publish-demo": "npm run build && npm run deploy"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/abhishek12414/react-npm-starter-kit"
-  },
-  "keywords": [
-    "react",
-    "react-npm",
-    "react-npm-starter",
-    "react-npm-starter-kit"
-  ],
-  "license": "MIT",
-  "author": "Abhishek Kumar",
-  "homepage": "https://github.com/abhishek12414/react-npm-starter-kit",
-  "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.15.7",
-    "@babel/core": "^7.15.8",
-    "@babel/node": "^7.15.8",
-    "@babel/plugin-proposal-export-default-from": "^7.14.5",
-    "@babel/preset-env": "^7.15.8",
-    "@babel/preset-react": "^7.14.5",
-    "babel-loader": "^8.2.2",
-    "css-loader": "^6.4.0",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.3.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "style-loader": "^3.3.0",
-    "webpack": "^5.58.1",
-    "webpack-cli": "^4.9.0",
-    "webpack-dev-server": "^4.3.1"
-  }
+	"name": "react-npm-starter-kit",
+	"description": "React npm starter kit provides the basic setup to continue on npm library building",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"scripts": {
+		"start": "webpack-dev-server --mode development",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"transpile": "babel src -d dist --copy-files",
+		"prePublishOnly": "npm run transpile",
+		"build": "webpack --mode production",
+		"deploy": "gh-pages -d examples/dist",
+		"publish-demo": "npm run build && npm run deploy",
+		"format": "prettier --write \"src/**/*.js\"",
+		"lint": "eslint --fix \"src/**/*.js\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/abhishek12414/react-npm-starter-kit"
+	},
+	"keywords": [
+		"react",
+		"react-npm",
+		"react-npm-starter",
+		"react-npm-starter-kit"
+	],
+	"license": "MIT",
+	"author": "Abhishek Kumar",
+	"homepage": "https://github.com/abhishek12414/react-npm-starter-kit",
+	"peerDependencies": {
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.15.7",
+		"@babel/core": "^7.15.8",
+		"@babel/node": "^7.15.8",
+		"@babel/plugin-proposal-export-default-from": "^7.14.5",
+		"@babel/preset-env": "^7.15.8",
+		"@babel/preset-react": "^7.14.5",
+		"babel-eslint": "^10.1.0",
+		"babel-loader": "^8.2.2",
+		"css-loader": "^6.4.0",
+		"eslint": "^7.32.0",
+		"eslint-plugin-react": "^7.26.1",
+		"file-loader": "^6.2.0",
+		"html-webpack-plugin": "^5.3.2",
+		"husky": "^7.0.2",
+		"prettier": "2.4.1",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"style-loader": "^3.3.0",
+		"webpack": "^5.58.1",
+		"webpack-cli": "^4.9.0",
+		"webpack-dev-server": "^4.3.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run lint && npm run format"
+		}
+	}
 }
